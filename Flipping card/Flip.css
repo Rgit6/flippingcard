@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pixelify" , monospace;
+}
+
+
+
+/* section part is used for the background purpose and the gradient squares */
+
+section{
+    
+    min-height: 100vh;
+    width: 100%;
+    background: black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    perspective: 1500px;
+}
+
+section::before{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    background: linear-gradient(200deg,#fff,#55df1f,#020202f0);
+    border-radius: 50px;
+    transform: translate(-150px,-100px);
+}
+
+section::after{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    background: linear-gradient(200deg,#fff,#55df1f,#020202f0);
+    border-radius: 50px;
+    transform: translate(150px,100px);
+}
+
+.container{
+    position: relative;
+    width: 390px;
+    height: 230px;
+    z-index: 100;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+}
+
+.container:hover{
+    transform: rotateY(180deg);
+}
+.container .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backface-visibility: hidden;
+}
+
+
+.front-side .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px;
+}
+
+
+.front-side .logo img{
+    width: 50px;
+}
+
+h5{
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 15px;
+}
+
+
+/*-------------------- FRONT-SIDE OVER HERE---------------------------- */
+
+
+.back-side{
+    border: none;
+    transform: rotateY(180deg);
+}
+
+.back-side h4{
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+p{
+    padding-left: 10px;
+}
